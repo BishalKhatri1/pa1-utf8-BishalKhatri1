@@ -10,9 +10,9 @@ void is_animal_emoji_at(const char str[]){
         int char_num = 0;
         int i = 0;      // counting bytes
 	int codepoint = 0;
-        while(str[i] != '\0'){
+	 int char_len = 0;
+        while(str[i] != '\0'&& i + char_len <= strlen(str)){
                 unsigned char first = (unsigned char) str[i];   // positive value
-                int char_len = 0;
 
                 // determing bytes and its character length by using hw 1.5 code & concept
                  if (first <= 0x7F) {
@@ -31,7 +31,7 @@ void is_animal_emoji_at(const char str[]){
                         char_len = 1; 
                  }
 
-                         if (char_len == 4){
+                         if (char_len == 4  && i + 3 < strlen(str)){
                                  // reconstruct Unicode codepoint
                                   codepoint = ((first & 0x07) << 18) |
                                                  ((str[i+1] & 0x3F) << 12) |
@@ -56,7 +56,7 @@ void codepoint_at(char str[]){
 	int length = 0;
     unsigned char first = 0;
     int j = 0;// for loop
-	 while(str[j] != '\n'){
+	 while(str[j] != '\0'){
 	int32_t codepoint = 0;
 	 unsigned char first = (unsigned char)str[j];
     	if (first <= 0x7F) { // ascii or 1 byte
@@ -100,7 +100,7 @@ void substring_of(const char str[],int start, int end) {
 	int char_num = 0;
 	int i = 0; 	//counting bytes
 	while(str[i] != '\0'){
-		unsigned char first = (unsigned) str[i]; 	// positive value
+		unsigned int first = (unsigned) str[i]; 	// positive value
 		int char_len = 0;
 
 		// determing bytes and its character length by using hw 1.5 code & concept
