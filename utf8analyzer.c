@@ -237,11 +237,11 @@ int main(int argc, char** argv) {
 
                 // for checking valid ASCII
                 ascii_or_not = is_ascii(buffer);
-                printf ("Valid ASCII: %s\n", ascii_or_not ? "true" :"false" );//tenary operator shorter version of if & else
+                printf ("\n Valid ASCII: %s\n", ascii_or_not ? "true" :"false" );//tenary operator shorter version of if & else
 
                 //for making uppercase letters
                 making_uppercase = capitalize_ascii(buffer);
-                printf("%s", buffer);
+                printf("%s\n", buffer);
 
 		//for length in bytes
 		printf("Length in bytes : %zu\n",strlen(buffer));
@@ -250,15 +250,15 @@ int main(int argc, char** argv) {
 		 printf("Number of code points : %d\n",num_of_codepoints(buffer) );
 
 		 //Bytes per code point
-		 printf("Bytes per code point : ");
+		 printf("Bytes per code point : \n");
 		 bytes_per_code(buffer);
 
 		  //Substring of the first 6 code points
-                 printf("Substring of the first 6 code points : ");
+                 printf("Substring of the first 6 code points : \n");
                  substring_of(buffer, 0 ,6);
 
 		 //Code points as decimal numbers
-		 printf("Code points as decimal numbers : ");
+		 printf("Code points as decimal numbers : \n");
                  codepoint_at(buffer);
 
 		 //ANimal emoji
